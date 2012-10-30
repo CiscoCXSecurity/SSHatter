@@ -1,5 +1,5 @@
 #!/usr/bin/perl -w
-# $Header: /var/lib/cvsd/var/lib/cvsd/SSHatter/src/SSHatter.pl,v 1.1.1.1 2012-10-30 16:46:13 timb Exp $
+# $Header: /var/lib/cvsd/var/lib/cvsd/SSHatter/src/SSHatter.pl,v 1.2 2012-10-30 17:02:41 timb Exp $
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
