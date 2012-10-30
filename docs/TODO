@@ -1,0 +1,13 @@
+Required:
+
+* Handle throttled hosts
+
+Useful:
+
+* Make interactive mode persistant
+* Support keyboard interactive based authentication
+
+Nice to have:
+
+* Reimplement the timing attacks
+* Support protocol / version enumeration?

@@ -1,0 +1,71 @@
+1.1 - 1.2
+
+* Changed failed connection handling to more gracefully handle RST from
+  Solaris hosts. Cheers, Erick Rudiak.
+
+1.0 - 1.1 (65535 release)
+
+* Added verbose mode (-v), where SSHatter will give realtime updates on
+  STDERR
+* Added import and export options to save and reuse valid credentials
+* Added usernames (taken from honeypot)
+
+0.9 - 1.0
+
+* Fixed minor bug where command succeeds but there is no output
+* Added dumb mode (-d), where SSHatter will check password equals password,
+  username and blank. Cheers Mylestro
+* Added sudo mode (-0), where SSHatter will echo the password to STDIN
+* Added rudimentry file transfer modes (-P/-G), these also work
+  interactively via "put" and "get"
+* Improved usage message
+
+0.7 - 0.9 (65535/uncon release)
+
+Completely refactored:
+
+* New command line interface based on Getops
+* Modular design to allow more code reuse
+* New threading model
+* Support for SSH private keys (-k)
+* Mass mode (-m) for post brute force command execution
+* Interactive mode (-i) for post brute force command execution
+* Timing attack based username enumeration has been removed for now
+* New bugs?
+
+0.6 - 0.7
+
+* Fixed minor bug to timing code
+* Updated passwords
+
+0.5 - 0.6
+
+* Now allows timing attacks to be attempted for rudimentry username
+  enumeration
+* Changed error handling for reconnects
+* Allows port numbers to be specified in the target servers file
+  in the format <hostname>:[<portnumber>]
+* Fixed minor bugs
+
+0.4 - 0.5
+
+* Handles systems configured with AllowUsers correctly as these
+  systems do not return "Permission denied" on Net::SSH::Perl->login()
+
+0.3 - 0.4
+
+* Added optional reconnect on connection failure
+
+0.2 - 0.3
+
+* Changed the order of the loops to improve performance
+
+0.1 - 0.2
+
+* Modified to allow multiple hostnames and usernames
+* Added passwords (taken from
+  http://www.nth-dimension.org.uk/downloads.php?id=30)
+
+0.0 - 0.1
+
+* Initial PoC

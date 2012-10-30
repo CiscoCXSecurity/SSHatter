@@ -1,0 +1,13 @@
+To install:
+
+1) Check you have the following installed:
+   - Parallel::ForkManager (libparallel-forkmanager-perl
+     package under GNU/Debian)
+   - Net::SSH::Perl (available from CPAN)
+   - Getopt::Std (part of the standard Perl distribution)
+   - File::Basename (part of the standard Perl distribution)
+2) Make sure SSHatter.pl is executable (chmod u+x
+   SSHatter.pl)
+
+The latest version of SSHatter can always be found at
+<http://www.nth-dimension.org.uk/>.
