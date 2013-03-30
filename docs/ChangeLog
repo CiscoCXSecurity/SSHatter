@@ -1,7 +1,9 @@
 1.1 - 1.2
 
 * Changed failed connection handling to more gracefully handle RST from
-  Solaris hosts. Cheers, Erick Rudiak.
+  Solaris hosts. Cheers, Erick Rudiak
+* Handles systems configured with MaxAuthTries correctly as these
+  systems return "Too many authentication failures for". Cheers, dugo
 
 1.0 - 1.1 (65535 release)
 

@@ -1,5 +1,5 @@
 #!/usr/bin/perl -w
-# $Header: /var/lib/cvsd/var/lib/cvsd/SSHatter/src/SSHatter.pl,v 1.2 2012-10-30 17:02:41 timb Exp $
+# $Header: /var/lib/cvsd/var/lib/cvsd/SSHatter/src/SSHatter.pl,v 1.3 2013-03-30 18:48:23 timb Exp $
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -77,7 +77,7 @@ sub checkbykey {
 			$sshhandle->cmd("echo SSHatter");
 		};
 		if ($@ ne "") {
-			if ($@ !~ /Permission denied|Connection closed by remote host/) {
+			if ($@ !~ /Permission denied|Connection closed by remote host|Too many authentication failures for/) {
 				die "SSHatter::Exception::Host::Check::Net::SSH::Perl::Cmd";
 			} else {
 				return 0;
@@ -106,7 +106,7 @@ sub checkbypassword {
 			$sshhandle->cmd("echo SSHatter");
 		};
 		if ($@ ne "") {
-			if ($@ !~ /Permission denied|Connection closed by remote host/) {
+			if ($@ !~ /Permission denied|Connection closed by remote host|Too many authentication failures for/) {
 				die "SSHatter::Exception::Host::Check::Net::SSH::Perl::Cmd";
 			} else {
 				return 0;
@@ -226,7 +226,7 @@ sub executebykey {
 			@resultstrings = $sshhandle->cmd($commandstring);
 		};
 		if ($@ ne "") {
-			if ($@ !~ /Permission denied|Connection closed by remote host/) {
+			if ($@ !~ /Permission denied|Connection closed by remote host|Too many authentication failures for/) {
 				die "SSHatter::Exception::Host::Check::Net::SSH::Perl::Cmd";
 			} else {
 				return ("", "", -42);
@@ -263,7 +263,7 @@ sub executebypassword {
 			}
 		};
 		if ($@ ne "") {
-			if ($@ !~ /Permission denied|Connection closed by remote host/) {
+			if ($@ !~ /Permission denied|Connection closed by remote host|Too many authentication failures for/) {
 				die "SSHatter::Exception::Host::Check::Net::SSH::Perl::Cmd";
 			} else {
 				return ("", "", -42);
@@ -295,13 +295,13 @@ my $masscommand;
 my $interactiveflag;
 my $localfilename;
 my $remotefilename;
+my $forkmanager;
 my $importhandle;
 my $importdata;
 my $targetserverhandle;
 my $targetserverstring;
 my $hostname;
 my $portnumber;
-my $forkmanager;
 my $targetserver;
 my $processid;
 my $writehandle;
